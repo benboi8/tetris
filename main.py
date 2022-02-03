@@ -50,6 +50,7 @@ class Grid:
 		return (x - self.rect.x) // self.size, (y - self.rect.y) // self.size
 
 
+# change how each sub cube is create for each shape maybe make new class
 class Cube(Cell):
 	def __init__(self, pos, size):
 		super().__init__(pos, size, color=shapeColors[type(self)])
@@ -151,6 +152,7 @@ class LeftZ(Cell):
 		pg.draw.rect(screen, self.backgroundColor, (self.rect.x + self.size, self.rect.y + self.size, self.rect.w, self.rect.h))
 		DrawRectOutline(self.borderColor, (self.rect.x + self.size, self.rect.y + self.size, self.rect.w, self.rect.h))
 
+
 class RightZ(Cell):
 	def __init__(self, pos, size):
 		super().__init__(pos, size, color=shapeColors[type(self)])
@@ -166,6 +168,7 @@ class RightZ(Cell):
 		DrawRectOutline(self.borderColor, (self.rect.x + self.size, self.rect.y - self.size, self.rect.w, self.rect.h))
 		pg.draw.rect(screen, self.backgroundColor, (self.rect.x + self.size * 2, self.rect.y - self.size, self.rect.w, self.rect.h))
 		DrawRectOutline(self.borderColor, (self.rect.x + self.size * 2, self.rect.y - self.size, self.rect.w, self.rect.h))
+
 
 shapeColors = {
 	Cube: yellow,
